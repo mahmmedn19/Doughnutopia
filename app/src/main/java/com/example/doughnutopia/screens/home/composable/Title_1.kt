@@ -15,7 +15,7 @@ import com.example.doughnutopia.ui.theme.Typography
 @Composable
 fun TodayOffers(){
     CustomText(
-        modifier = Modifier.padding(top = 56.dp, bottom = 24.dp),
+        modifier = Modifier.padding(start = 16.dp,top = 56.dp, bottom = 32.dp),
         text = "Today Offers",
         style = Typography.titleMedium
     )

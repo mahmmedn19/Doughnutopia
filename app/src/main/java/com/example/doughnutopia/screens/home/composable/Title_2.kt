@@ -15,7 +15,7 @@ import com.example.doughnutopia.ui.theme.Typography
 @Composable
 fun DonutsText(){
     CustomText(
-        modifier = Modifier.padding(top = 46.dp, bottom = 64.dp),
+        modifier = Modifier.padding(start =16.dp,top = 46.dp, bottom = 16.dp),
         text = "Donuts",
         style = Typography.titleMedium
     )

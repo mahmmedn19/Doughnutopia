@@ -26,7 +26,7 @@ fun GonutsWithSearch(){
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(top = 32.dp),
+            .padding(start = 16.dp,top = 32.dp, bottom = 16.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column {
