@@ -32,7 +32,7 @@ import com.example.doughnutopia.ui.theme.Typography
 fun DonutsList(imageList: List<Int>) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(32.dp),
-        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 32.dp)
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 32.dp, bottom = 16.dp)
     ) {
         items(10) { index ->
             Box(
