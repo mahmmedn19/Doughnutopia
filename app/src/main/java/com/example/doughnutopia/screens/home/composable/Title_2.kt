@@ -12,10 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.ui.theme.Typography
+
 @Composable
-fun DonutsText(){
+fun DonutsText() {
     CustomText(
-        modifier = Modifier.padding(start =16.dp,top = 46.dp, bottom = 16.dp),
+        modifier = Modifier.padding(start = 16.dp, top = 46.dp, bottom = 16.dp),
         text = "Donuts",
         style = Typography.titleMedium
     )

@@ -21,12 +21,13 @@ import com.example.doughnutopia.composable.CustomIcon
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.ui.theme.Pink_20
 import com.example.doughnutopia.ui.theme.Typography
+
 @Composable
-fun GonutsWithSearch(){
+fun GonutsWithSearch() {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp,top = 32.dp, bottom = 16.dp),
+            .padding(start = 16.dp, top = 32.dp, bottom = 16.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column {

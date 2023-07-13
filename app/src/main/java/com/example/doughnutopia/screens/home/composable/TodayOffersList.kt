@@ -43,7 +43,7 @@ import com.example.doughnutopia.ui.theme.White
 fun TodayList(listImage: List<Int>) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(32.dp),
-        contentPadding = PaddingValues(start=16.dp,end=32.dp)
+        contentPadding = PaddingValues(start = 16.dp, end = 32.dp)
     ) {
         items(listImage.size) { index ->
             val images = listImage[index]

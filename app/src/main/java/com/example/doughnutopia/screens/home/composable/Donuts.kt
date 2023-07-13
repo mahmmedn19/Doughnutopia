@@ -9,12 +9,9 @@ package com.example.doughnutopia.screens.home.composable
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,7 +32,7 @@ import com.example.doughnutopia.ui.theme.Typography
 fun DonutsList(imageList: List<Int>) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(32.dp),
-        contentPadding = PaddingValues(start = 16.dp,end=16.dp,top=32.dp)
+        contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 32.dp)
     ) {
         items(10) { index ->
             Box(
@@ -53,22 +50,22 @@ fun DonutsList(imageList: List<Int>) {
                     ),
                 contentAlignment = Alignment.BottomCenter
             ) {
-                    ResizableImage(
-                        modifier = Modifier.offset(x = 0.dp, y = (-48).dp),
-                        painter = painterResource(id = R.drawable.image2),
-                        size = 100
-                    )
-                    CustomText(
-                        modifier = Modifier.offset(x = 0.dp, y = (-32).dp),
-                        text = "Strawberry Wheel",
-                        style = Typography.labelMedium
-                    )
-                    CustomText(
-                        modifier = Modifier.offset(x = 0.dp, y = (-8).dp),
-                        text = "$22",
-                        style = Typography.labelMedium,
-                        color = Pink
-                    )
+                ResizableImage(
+                    modifier = Modifier.offset(x = 0.dp, y = (-48).dp),
+                    painter = painterResource(id = R.drawable.image2),
+                    size = 100
+                )
+                CustomText(
+                    modifier = Modifier.offset(x = 0.dp, y = (-32).dp),
+                    text = "Strawberry Wheel",
+                    style = Typography.labelMedium
+                )
+                CustomText(
+                    modifier = Modifier.offset(x = 0.dp, y = (-8).dp),
+                    text = "$22",
+                    style = Typography.labelMedium,
+                    color = Pink
+                )
 
             }
         }
