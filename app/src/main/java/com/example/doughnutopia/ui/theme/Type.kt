@@ -4,6 +4,7 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
@@ -24,7 +25,7 @@ val Typography = Typography(
         fontFamily = Inter,
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
-        color = Black
+        color = Black,
     ),
     titleSmall = TextStyle(
         fontFamily = Inter,
@@ -36,7 +37,8 @@ val Typography = Typography(
         fontFamily = Inter,
         fontWeight = FontWeight.SemiBold,
         fontSize = 18.sp,
-        color = Black
+        color = Black,
+        textDecoration = TextDecoration.LineThrough
     ),
     labelMedium = TextStyle(
         fontFamily = Inter,
