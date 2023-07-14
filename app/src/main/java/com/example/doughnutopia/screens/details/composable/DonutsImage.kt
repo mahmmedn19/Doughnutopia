@@ -48,8 +48,8 @@ fun RotatingDonutsImage(modifier: Modifier = Modifier) {
             painter = donutsImage,
             contentDescription = "Donuts",
             modifier = Modifier
-                .offset(y = (-16).dp)
-                .size(300.dp)
+                .offset(y = (-36).dp)
+                .size(320.dp)
                 .rotate(rotationAngle)
                 .constrainAs(image) {
                     top.linkTo(parent.top)

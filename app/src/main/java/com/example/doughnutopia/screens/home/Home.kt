@@ -24,11 +24,16 @@ fun HomeScreen() {
     val navController = LocalNavigationProvider.current
 
     val listImage = listOf(
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
+        R.drawable.donuts,
+        R.drawable.donuts,
+        R.drawable.donuts,
+        R.drawable.donuts,
+    )
+    val listImage2 = listOf(
+        R.drawable.image2,
+        R.drawable.image2,
+        R.drawable.image2,
+        R.drawable.image2,
     )
 
     LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -45,7 +50,7 @@ fun HomeScreen() {
             DonutsText()
         }
         item {
-            DonutsList(listImage)
+            DonutsList(listImage2)
         }
     }
 }
