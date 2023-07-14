@@ -73,7 +73,7 @@ fun OnBoardingScreen() {
                     end.linkTo(parent.end)
                 }
                 .fillMaxWidth()
-                .height(68.dp)
+                .height(56.dp)
                 .padding(horizontal = 40.dp),
             text = "Get Started",
             onClick = { /*TODO*/ },

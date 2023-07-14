@@ -42,6 +42,7 @@ fun GonutsWithSearch() {
         }
         CustomIcon(
             modifier = Modifier
+                .padding(end = 16.dp)
                 .background(
                     Pink_20, RoundedCornerShape(8.dp)
                 )

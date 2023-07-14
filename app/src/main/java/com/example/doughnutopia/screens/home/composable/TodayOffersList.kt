@@ -29,13 +29,18 @@ import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.doughnutopia.R
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.composable.ResizableImage
 import com.example.doughnutopia.ui.theme.Black
 import com.example.doughnutopia.ui.theme.Black_60
+import com.example.doughnutopia.ui.theme.Inter
 import com.example.doughnutopia.ui.theme.Typography
 import com.example.doughnutopia.ui.theme.White
 
@@ -90,8 +95,13 @@ fun TodayList(listImage: List<Int>) {
                         CustomText(
                             modifier = Modifier.padding(end = 8.dp),
                             text = "$20",
-                            style = Typography.labelLarge,
-                            color = Black_60
+                            style = TextStyle(
+                                fontFamily = Inter,
+                                fontWeight = FontWeight.SemiBold,
+                                fontSize = 18.sp,
+                                color = Black_60,
+                                textDecoration = TextDecoration.LineThrough
+                            )
                         )
                         CustomText(
                             modifier = Modifier.padding(bottom = 8.dp, end = 16.dp),

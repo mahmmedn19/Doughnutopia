@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.doughnutopia.screens.details.DetailsScreen
 import com.example.doughnutopia.screens.home.HomeScreen
 import com.example.doughnutopia.ui.theme.DoughnutopiaTheme
 
@@ -35,6 +36,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     DoughnutopiaTheme {
-         HomeScreen()
+        DetailsScreen()
     }
 }
