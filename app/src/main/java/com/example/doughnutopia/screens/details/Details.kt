@@ -7,6 +7,7 @@
 package com.example.doughnutopia.screens.details
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.doughnutopia.LocalNavigationProvider
 import com.example.doughnutopia.R
 import com.example.doughnutopia.composable.CustomIcon
 import com.example.doughnutopia.composable.ResizableImage
@@ -30,6 +32,8 @@ import com.example.doughnutopia.ui.theme.White
 
 @Composable
 fun DetailsScreen() {
+    val navController = LocalNavigationProvider.current
+
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -46,7 +50,7 @@ fun DetailsScreen() {
                 val guideline = createGuidelineFromTop(300.dp)
 
                 CustomIcon(
-                    modifier = Modifier.constrainAs(iconRef) {
+                    modifier = Modifier.clickable { navController.navigateUp() }.constrainAs(iconRef) {
                         start.linkTo(parent.start, 16.dp)
                         top.linkTo(parent.top, 16.dp)
                     },

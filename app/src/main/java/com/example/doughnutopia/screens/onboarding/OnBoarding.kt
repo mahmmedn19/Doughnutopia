@@ -19,13 +19,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.doughnutopia.LocalNavigationProvider
 import com.example.doughnutopia.R
+import com.example.doughnutopia.Screen
 import com.example.doughnutopia.composable.CustomButton
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.ui.theme.Typography
 
 @Composable
 fun OnBoardingScreen() {
+    val navController = LocalNavigationProvider.current
+
     ConstraintLayout(
         modifier = Modifier
             .fillMaxSize()
@@ -41,7 +45,7 @@ fun OnBoardingScreen() {
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(titleRef) {
-                    bottom.linkTo(bodyRef.top, 18.dp)
+                    bottom.linkTo(bodyRef.top, 16.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
@@ -56,7 +60,7 @@ fun OnBoardingScreen() {
             modifier = Modifier
                 .fillMaxWidth()
                 .constrainAs(bodyRef) {
-                    bottom.linkTo(buttonRef.top, 60.dp)
+                    bottom.linkTo(buttonRef.top, 38.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 }
@@ -69,14 +73,14 @@ fun OnBoardingScreen() {
             modifier = Modifier
                 .constrainAs(buttonRef) {
                     start.linkTo(parent.start)
-                    bottom.linkTo(parent.bottom, 46.dp)
+                    bottom.linkTo(parent.bottom, 36.dp)
                     end.linkTo(parent.end)
                 }
                 .fillMaxWidth()
                 .height(56.dp)
                 .padding(horizontal = 40.dp),
             text = "Get Started",
-            onClick = { /*TODO*/ },
+            onClick = {navController.navigate(Screen.HomeScreen.rout) },
             textStyle = Typography.labelLarge
         )
     }

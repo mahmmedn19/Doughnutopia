@@ -7,6 +7,7 @@
 package com.example.doughnutopia.screens.home.composable
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -35,7 +36,9 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.doughnutopia.R
+import com.example.doughnutopia.Screen
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.composable.ResizableImage
 import com.example.doughnutopia.ui.theme.Black
@@ -45,38 +48,40 @@ import com.example.doughnutopia.ui.theme.Typography
 import com.example.doughnutopia.ui.theme.White
 
 @Composable
-fun TodayList(listImage: List<Int>) {
+fun TodayList(listImage: List<Int>,navController:NavController) {
     LazyRow(
-        horizontalArrangement = Arrangement.spacedBy(32.dp),
+        horizontalArrangement = Arrangement.spacedBy(36.dp),
         contentPadding = PaddingValues(start = 16.dp, end = 32.dp)
     ) {
         items(listImage.size) { index ->
             val images = listImage[index]
             Box(
                 modifier = Modifier
+                    .clickable { navController.navigate(Screen.DetailsScreen.rout) }
                     .width(192.dp)
                     .height(325.dp)
                     .background(color = Color(0xFFD7E4F6), shape = RoundedCornerShape(size = 20.dp))
                     .padding(start = 16.dp, top = 16.dp)
             ) {
-                Column(modifier = Modifier.fillMaxSize()) {
-                    ResizableImage(
-                        modifier = Modifier
-                            .size(36.dp)
-                            .background(White, CircleShape)
-                            .padding(8.dp),
-                        painter = painterResource(R.drawable.ic_fav)
-                    )
-                    ResizableImage(
-                        modifier = Modifier
-                            .offset(90.dp, 0.dp)
-                            .size(130.dp)
-                            .paint(
-                                painterResource(id = images),
-                                contentScale = ContentScale.Crop
-                            ),
-                        painter = painterResource(id = images)
-                    )
+                ResizableImage(
+                    modifier = Modifier
+                        .size(36.dp)
+                        .background(White, CircleShape)
+                        .padding(8.dp),
+                    painter = painterResource(R.drawable.ic_fav)
+                )
+
+                ResizableImage(
+                    modifier = Modifier
+                        .offset(50.dp, 0.dp)
+                        .size(200.dp),
+                    painter = painterResource(id = images)
+                )
+
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Bottom
+                ) {
                     CustomText(
                         modifier = Modifier.padding(bottom = 8.dp),
                         text = "Strawberry Wheel",
@@ -120,11 +125,11 @@ fun TodayList(listImage: List<Int>) {
 @Composable
 fun PreviewScreen() {
     val listImage = listOf(
-        R.drawable.image,
+        R.drawable.donuts,
         R.drawable.image,
         R.drawable.image,
         R.drawable.image,
         R.drawable.image,
     )
-    TodayList(listImage)
+   // TodayList(listImage)
 }
