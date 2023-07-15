@@ -24,7 +24,7 @@ val Typography = Typography(
         fontFamily = Inter,
         fontWeight = FontWeight.SemiBold,
         fontSize = 20.sp,
-        color = Black
+        color = Black,
     ),
     titleSmall = TextStyle(
         fontFamily = Inter,
@@ -36,7 +36,7 @@ val Typography = Typography(
         fontFamily = Inter,
         fontWeight = FontWeight.SemiBold,
         fontSize = 18.sp,
-        color = Black
+        color = Black,
     ),
     labelMedium = TextStyle(
         fontFamily = Inter,
