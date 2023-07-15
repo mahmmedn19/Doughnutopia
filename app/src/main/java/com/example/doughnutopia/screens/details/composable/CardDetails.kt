@@ -6,15 +6,14 @@
 
 package com.example.doughnutopia.screens.details.composable
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -29,12 +28,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.doughnutopia.R
 import com.example.doughnutopia.composable.CustomButton
@@ -98,28 +93,31 @@ fun ProductDetailsScreen(modifier: Modifier = Modifier) {
             )
 
             Row(
-                modifier = Modifier.constrainAs(rowsButton) {
-                    top.linkTo(quantity.bottom, 32.dp)
-                    start.linkTo(parent.start)
-                },
+                modifier = Modifier
+                    .wrapContentSize()
+                    .constrainAs(rowsButton) {
+                        top.linkTo(quantity.bottom, 16.dp)
+                        start.linkTo(parent.start)
+                    },
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 CustomIconButton(
-                    modifier = Modifier.padding(end = 8.dp),
+                    modifier = Modifier.padding(end = 16.dp),
                     onClick = { quantityValue-- },
                     icon = Icons.Default.Remove,
                     tint = Black,
                     background = White
                 )
                 CustomText(
-                    modifier = Modifier.padding(horizontal = 36.dp),
+                    modifier = Modifier.width(32.dp),
                     text = quantityValue.toString(),
                     style = Typography.titleMedium,
-                    color = Black
+                    color = Black,
+                    textAlign = TextAlign.Center
                 )
                 CustomIconButton(
-                    modifier = Modifier.padding(start = 8.dp),
+                    modifier = Modifier.padding(start = 16.dp),
                     onClick = { quantityValue++ },
                     icon = Icons.Default.Add,
                     tint = White,
@@ -128,7 +126,7 @@ fun ProductDetailsScreen(modifier: Modifier = Modifier) {
             }
             Row(
                 modifier = Modifier.constrainAs(rowButtonAddToCart) {
-                    top.linkTo(rowsButton.bottom, 32.dp)
+                    top.linkTo(rowsButton.bottom, 36.dp)
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                 },

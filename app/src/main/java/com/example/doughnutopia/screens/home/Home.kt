@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.doughnutopia.LocalNavigationProvider
 import com.example.doughnutopia.R
 import com.example.doughnutopia.screens.home.composable.DonutsList
 import com.example.doughnutopia.screens.home.composable.DonutsText
@@ -20,12 +21,19 @@ import com.example.doughnutopia.screens.home.composable.TodayOffers
 
 @Composable
 fun HomeScreen() {
+    val navController = LocalNavigationProvider.current
+
     val listImage = listOf(
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
-        R.drawable.image,
+        R.drawable.donuts,
+        R.drawable.donuts,
+        R.drawable.donuts,
+        R.drawable.donuts,
+    )
+    val listImage2 = listOf(
+        R.drawable.image2,
+        R.drawable.image2,
+        R.drawable.image2,
+        R.drawable.image2,
     )
 
     LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -36,13 +44,13 @@ fun HomeScreen() {
             TodayOffers()
         }
         item {
-            TodayList(listImage)
+            TodayList(listImage,navController)
         }
         item {
             DonutsText()
         }
         item {
-            DonutsList(listImage)
+            DonutsList(listImage2)
         }
     }
 }

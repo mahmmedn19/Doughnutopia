@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,7 +35,8 @@ fun DonutsList(imageList: List<Int>) {
         horizontalArrangement = Arrangement.spacedBy(32.dp),
         contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 32.dp, bottom = 16.dp)
     ) {
-        items(10) { index ->
+        items(imageList.size) { index ->
+            val image = imageList[index]
             Box(
                 modifier = Modifier
                     .width(138.dp)
@@ -51,8 +53,8 @@ fun DonutsList(imageList: List<Int>) {
                 contentAlignment = Alignment.BottomCenter
             ) {
                 ResizableImage(
-                    modifier = Modifier.offset(x = 0.dp, y = (-48).dp),
-                    painter = painterResource(id = R.drawable.image2),
+                    modifier = Modifier.size(100.dp).height(90.dp).offset(x = 0.dp, y = (-48).dp),
+                    painter = painterResource(id = image),
                     size = 100
                 )
                 CustomText(
