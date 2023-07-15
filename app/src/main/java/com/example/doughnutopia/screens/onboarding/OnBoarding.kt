@@ -80,7 +80,7 @@ fun OnBoardingScreen() {
                 .height(56.dp)
                 .padding(horizontal = 40.dp),
             text = "Get Started",
-            onClick = {navController.navigate(Screen.HomeScreen.rout) },
+            onClick = {navController.navigate(Screen.HomeScreen.route) },
             textStyle = Typography.labelLarge
         )
     }

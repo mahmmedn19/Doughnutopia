@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import com.example.doughnutopia.Screen
 
 fun NavGraphBuilder.onBoardingRoute() {
-    composable(route = Screen.OnBoardingScreen.rout) {
+    composable(route = Screen.OnBoardingScreen.route) {
         OnBoardingScreen()
     }
 }

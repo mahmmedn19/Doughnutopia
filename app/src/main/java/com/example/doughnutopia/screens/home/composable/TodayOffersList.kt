@@ -26,9 +26,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.paint
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -48,16 +46,16 @@ import com.example.doughnutopia.ui.theme.Typography
 import com.example.doughnutopia.ui.theme.White
 
 @Composable
-fun TodayList(listImage: List<Int>,navController:NavController) {
+fun TodayList(listImage: List<Int>, navController: NavController) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(36.dp),
-        contentPadding = PaddingValues(start = 16.dp, end = 32.dp)
+        contentPadding = PaddingValues(start = 16.dp, end = 36.dp)
     ) {
         items(listImage.size) { index ->
             val images = listImage[index]
             Box(
                 modifier = Modifier
-                    .clickable { navController.navigate(Screen.DetailsScreen.rout) }
+                    .clickable { navController.navigate(Screen.DetailsScreen.route) }
                     .width(192.dp)
                     .height(325.dp)
                     .background(color = Color(0xFFD7E4F6), shape = RoundedCornerShape(size = 20.dp))
@@ -131,5 +129,5 @@ fun PreviewScreen() {
         R.drawable.image,
         R.drawable.image,
     )
-   // TodayList(listImage)
+    // TodayList(listImage)
 }

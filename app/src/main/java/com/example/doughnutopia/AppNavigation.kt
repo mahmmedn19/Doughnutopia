@@ -6,8 +6,20 @@
 
 package com.example.doughnutopia
 
-sealed class Screen(val rout: String) {
-    object OnBoardingScreen : Screen("OnBoardingScreen")
-    object HomeScreen : Screen("HomeScreen")
-    object DetailsScreen : Screen("DetailsScreen")
+sealed class Screen(
+    val route: String,
+    val title: String,
+    val icon: Int,
+    val iconSelected:Int
+) {
+    object HomeScreen : Screen("HomeScreen", "Home", R.drawable.ic_home,R.drawable.home1)
+    object FavoriteScreen : Screen("FavoriteScreen", "Favorite", R.drawable.ic_fav,R.drawable.heart1)
+    object NotificationScreen :
+        Screen("NotificationScreen", "Notification", R.drawable.ic_notification,R.drawable.notification1)
+
+    object CartScreen : Screen("CartScreen", "Cart", R.drawable.ic_buy,R.drawable.buy1)
+    object ProfileScreen : Screen("ProfileScreen", "Profile", R.drawable.ic_user,R.drawable.ic_user)
+    object OnBoardingScreen : Screen("OnBoardingScreen", "", 0,0)
+    object DetailsScreen : Screen("DetailsScreen", "", 0,0)
+
 }

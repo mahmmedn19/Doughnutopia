@@ -12,7 +12,7 @@ import com.example.doughnutopia.Screen
 
 
 fun NavGraphBuilder.homeRoute() {
-    composable(route = Screen.HomeScreen.rout) {
+    composable(route = Screen.HomeScreen.route) {
         HomeScreen()
     }
 }

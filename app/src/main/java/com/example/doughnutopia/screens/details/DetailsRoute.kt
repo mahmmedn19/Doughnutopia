@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import com.example.doughnutopia.Screen
 
 fun NavGraphBuilder.detailsRoute() {
-    composable(route = Screen.DetailsScreen.rout) {
+    composable(route = Screen.DetailsScreen.route) {
         DetailsScreen()
     }
 }

@@ -8,7 +8,6 @@ package com.example.doughnutopia.screens.details
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -50,10 +49,12 @@ fun DetailsScreen() {
                 val guideline = createGuidelineFromTop(300.dp)
 
                 CustomIcon(
-                    modifier = Modifier.clickable { navController.navigateUp() }.constrainAs(iconRef) {
-                        start.linkTo(parent.start, 16.dp)
-                        top.linkTo(parent.top, 16.dp)
-                    },
+                    modifier = Modifier
+                        .clickable { navController.navigateUp() }
+                        .constrainAs(iconRef) {
+                            start.linkTo(parent.start, 16.dp)
+                            top.linkTo(parent.top, 16.dp)
+                        },
                     drawableResId = R.drawable.ic_back,
                 )
                 RotatingDonutsImage(
