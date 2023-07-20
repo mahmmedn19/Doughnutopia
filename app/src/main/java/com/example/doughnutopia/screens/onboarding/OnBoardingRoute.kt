@@ -8,7 +8,7 @@ package com.example.doughnutopia.screens.onboarding
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
-import com.example.doughnutopia.Screen
+import com.example.doughnutopia.navigation.Screen
 
 fun NavGraphBuilder.onBoardingRoute() {
     composable(route = Screen.OnBoardingScreen.route) {

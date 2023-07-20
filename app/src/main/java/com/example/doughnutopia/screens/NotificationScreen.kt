@@ -22,6 +22,6 @@ fun NotificationScreen() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Notification مع الاسف مفيش ", fontSize = 20.sp)
+        Text(text = "Notification Not Implemented ", fontSize = 20.sp)
     }
 }

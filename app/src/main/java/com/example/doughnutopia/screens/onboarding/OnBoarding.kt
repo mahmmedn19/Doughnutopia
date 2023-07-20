@@ -19,9 +19,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.doughnutopia.LocalNavigationProvider
+import com.example.doughnutopia.navigation.LocalNavigationProvider
 import com.example.doughnutopia.R
-import com.example.doughnutopia.Screen
+import com.example.doughnutopia.navigation.Screen
 import com.example.doughnutopia.composable.CustomButton
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.ui.theme.Typography

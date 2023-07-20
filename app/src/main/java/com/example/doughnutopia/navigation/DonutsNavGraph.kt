@@ -1,10 +1,10 @@
 /*
- * Created by Mohamed Naser on 7/14/23, 3:23 PM, 2023.
+ * Created by Mohamed Naser on 7/18/23, 1:17 PM, 2023.
  *
  * Copyright (c) 2023 All rights reserved.
  */
 
-package com.example.doughnutopia
+package com.example.doughnutopia.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
