@@ -16,7 +16,7 @@ object Utils {
                     id = 1,
                     name = "Strawberry Donut",
                     description = "Delicious donut with fresh strawberries",
-                    price = "$2.99",
+                    price = "$16",
                     discount = "$10",
                     imageResource = R.drawable.image,
                     isFavorite = false
@@ -25,7 +25,7 @@ object Utils {
                     id = 2,
                     name = "Chocolate Donut",
                     description = "Rich and decadent chocolate donut",
-                    price = "$3.49",
+                    price = "$34",
                     discount = "$15",
                     imageResource = R.drawable.image,
                     isFavorite = true
@@ -34,7 +34,16 @@ object Utils {
                     id = 3,
                     name = "Vanilla Donut",
                     description = "Classic vanilla-flavored donut",
-                    price = "$2.49",
+                    price = "$29",
+                    discount = "$5",
+                    imageResource = R.drawable.image,
+                    isFavorite = false
+                ),
+                Donuts(
+                    id = 3,
+                    name = "Chocolate Donut",
+                    description = "Classic vanilla-flavored donut",
+                    price = "$19",
                     discount = "$5",
                     imageResource = R.drawable.image,
                     isFavorite = false

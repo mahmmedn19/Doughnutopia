@@ -42,7 +42,9 @@ import com.example.doughnutopia.composable.ResizableImage
 import com.example.doughnutopia.screens.home.HomeUiStates
 import com.example.doughnutopia.ui.theme.Black
 import com.example.doughnutopia.ui.theme.Black_60
+import com.example.doughnutopia.ui.theme.Blue
 import com.example.doughnutopia.ui.theme.Inter
+import com.example.doughnutopia.ui.theme.Pink_20
 import com.example.doughnutopia.ui.theme.Typography
 import com.example.doughnutopia.ui.theme.White
 
@@ -54,12 +56,13 @@ fun TodayList(state: HomeUiStates, navController: NavController) {
     ) {
         items(state.donutsDetailsList.size) { index ->
             val items = state.donutsDetailsList[index]
+            val background = if(index%2==1) Blue else Pink_20
             Box(
                 modifier = Modifier
                     .clickable { navController.navigate(Screen.DetailsScreen.route) }
                     .width(192.dp)
                     .height(325.dp)
-                    .background(color = Color(0xFFD7E4F6), shape = RoundedCornerShape(size = 20.dp))
+                    .background(color = background, shape = RoundedCornerShape(size = 20.dp))
                     .padding(start = 16.dp, top = 16.dp)
             ) {
                 ResizableImage(
