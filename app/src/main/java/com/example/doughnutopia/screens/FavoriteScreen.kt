@@ -22,6 +22,6 @@ fun FavoriteScreen() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Favorite مع الاسف مفيش ", fontSize = 20.sp)
+        Text(text = "Favorite Not Implemented ", fontSize = 20.sp)
     }
 }

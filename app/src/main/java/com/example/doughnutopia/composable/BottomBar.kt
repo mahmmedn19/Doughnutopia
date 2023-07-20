@@ -22,7 +22,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.example.doughnutopia.Screen
+import com.example.doughnutopia.navigation.Screen
 import com.example.doughnutopia.ui.theme.Pink
 import com.example.doughnutopia.ui.theme.White
 

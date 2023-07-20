@@ -26,17 +26,18 @@ import androidx.compose.ui.unit.dp
 import com.example.doughnutopia.R
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.composable.ResizableImage
+import com.example.doughnutopia.screens.home.HomeUiStates
 import com.example.doughnutopia.ui.theme.Pink
 import com.example.doughnutopia.ui.theme.Typography
 
 @Composable
-fun DonutsList(imageList: List<Int>) {
+fun DonutsList(state: HomeUiStates) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(32.dp),
         contentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 32.dp, bottom = 16.dp)
     ) {
-        items(imageList.size) { index ->
-            val image = imageList[index]
+        items(state.donutItemsList.size) { index ->
+            val itemStates = state.donutItemsList[index]
             Box(
                 modifier = Modifier
                     .width(138.dp)
@@ -54,17 +55,17 @@ fun DonutsList(imageList: List<Int>) {
             ) {
                 ResizableImage(
                     modifier = Modifier.size(100.dp).height(90.dp).offset(x = 0.dp, y = (-48).dp),
-                    painter = painterResource(id = image),
+                    painter = painterResource(id = itemStates.imageResource),
                     size = 100
                 )
                 CustomText(
                     modifier = Modifier.offset(x = 0.dp, y = (-32).dp),
-                    text = "Strawberry Wheel",
+                    text = itemStates.name,
                     style = Typography.labelMedium
                 )
                 CustomText(
                     modifier = Modifier.offset(x = 0.dp, y = (-8).dp),
-                    text = "$22",
+                    text = itemStates.price,
                     style = Typography.labelMedium,
                     color = Pink
                 )
@@ -86,5 +87,5 @@ fun PreviewScreenList() {
         R.drawable.image,
         R.drawable.image,
     )
-    DonutsList(listImage)
+   // DonutsList(listImage)
 }
