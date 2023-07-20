@@ -22,6 +22,6 @@ fun CartScreen() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Cart  مع الاسف مفيش ", fontSize = 20.sp)
+        Text(text = "Cart Not Implemented", fontSize = 20.sp)
     }
 }

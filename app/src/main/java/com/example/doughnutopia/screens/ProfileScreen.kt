@@ -22,6 +22,6 @@ fun ProfileScreen() {
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.fillMaxSize()
     ) {
-        Text(text = "Profile  مع الاسف مفيش ", fontSize = 20.sp)
+        Text(text = "Profile Not Implemented ", fontSize = 20.sp)
     }
 }
