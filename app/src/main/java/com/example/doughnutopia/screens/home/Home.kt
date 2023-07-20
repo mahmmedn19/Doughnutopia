@@ -9,9 +9,12 @@ package com.example.doughnutopia.screens.home
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.doughnutopia.LocalNavigationProvider
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.doughnutopia.navigation.LocalNavigationProvider
 import com.example.doughnutopia.R
 import com.example.doughnutopia.screens.home.composable.DonutsList
 import com.example.doughnutopia.screens.home.composable.DonutsText
@@ -20,21 +23,20 @@ import com.example.doughnutopia.screens.home.composable.TodayList
 import com.example.doughnutopia.screens.home.composable.TodayOffers
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(){
+    val  viewModel: HomeViewModel = hiltViewModel()
+    val state by viewModel.uiState.collectAsState()
+
     val navController = LocalNavigationProvider.current
 
-    val listImage = listOf(
-        R.drawable.donuts,
-        R.drawable.donuts,
-        R.drawable.donuts,
-        R.drawable.donuts,
-    )
-    val listImage2 = listOf(
-        R.drawable.image2,
-        R.drawable.image2,
-        R.drawable.image2,
-        R.drawable.image2,
-    )
+    HomeContent(state =state)
+}
+
+
+@Composable
+fun HomeContent(state: HomeUiStates) {
+    val navController = LocalNavigationProvider.current
+
 
     LazyColumn(modifier = Modifier.fillMaxSize()) {
         item {
@@ -44,13 +46,13 @@ fun HomeScreen() {
             TodayOffers()
         }
         item {
-            TodayList(listImage,navController)
+            TodayList(state,navController)
         }
         item {
             DonutsText()
         }
         item {
-            DonutsList(listImage2)
+            DonutsList(state)
         }
     }
 }

@@ -36,9 +36,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.doughnutopia.R
-import com.example.doughnutopia.Screen
+import com.example.doughnutopia.navigation.Screen
 import com.example.doughnutopia.composable.CustomText
 import com.example.doughnutopia.composable.ResizableImage
+import com.example.doughnutopia.screens.home.HomeUiStates
 import com.example.doughnutopia.ui.theme.Black
 import com.example.doughnutopia.ui.theme.Black_60
 import com.example.doughnutopia.ui.theme.Inter
@@ -46,13 +47,13 @@ import com.example.doughnutopia.ui.theme.Typography
 import com.example.doughnutopia.ui.theme.White
 
 @Composable
-fun TodayList(listImage: List<Int>, navController: NavController) {
+fun TodayList(state: HomeUiStates, navController: NavController) {
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(36.dp),
         contentPadding = PaddingValues(start = 16.dp, end = 36.dp)
     ) {
-        items(listImage.size) { index ->
-            val images = listImage[index]
+        items(state.donutsDetailsList.size) { index ->
+            val items = state.donutsDetailsList[index]
             Box(
                 modifier = Modifier
                     .clickable { navController.navigate(Screen.DetailsScreen.route) }
@@ -73,7 +74,7 @@ fun TodayList(listImage: List<Int>, navController: NavController) {
                     modifier = Modifier
                         .offset(50.dp, 0.dp)
                         .size(200.dp),
-                    painter = painterResource(id = images)
+                    painter = painterResource(id = items.imageResource)
                 )
 
                 Column(
@@ -82,12 +83,12 @@ fun TodayList(listImage: List<Int>, navController: NavController) {
                 ) {
                     CustomText(
                         modifier = Modifier.padding(bottom = 8.dp),
-                        text = "Strawberry Wheel",
+                        text = items.name,
                         style = Typography.titleSmall
                     )
                     CustomText(
                         modifier = Modifier.padding(bottom = 8.dp),
-                        text = "These Baked Strawberry Donuts are filled with fresh strawberries...",
+                        text = items.description,
                         style = Typography.bodySmall
                     )
                     Row(
@@ -97,7 +98,7 @@ fun TodayList(listImage: List<Int>, navController: NavController) {
                     ) {
                         CustomText(
                             modifier = Modifier.padding(end = 8.dp),
-                            text = "$20",
+                            text = items.discount,
                             style = TextStyle(
                                 fontFamily = Inter,
                                 fontWeight = FontWeight.SemiBold,
@@ -108,7 +109,7 @@ fun TodayList(listImage: List<Int>, navController: NavController) {
                         )
                         CustomText(
                             modifier = Modifier.padding(bottom = 8.dp, end = 16.dp),
-                            text = "$16",
+                            text = items.price,
                             style = Typography.titleLarge,
                             color = Black
                         )

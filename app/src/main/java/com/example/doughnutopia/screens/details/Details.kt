@@ -20,7 +20,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.example.doughnutopia.LocalNavigationProvider
+import com.example.doughnutopia.navigation.LocalNavigationProvider
 import com.example.doughnutopia.R
 import com.example.doughnutopia.composable.CustomIcon
 import com.example.doughnutopia.composable.ResizableImage
